@@ -1,0 +1,22 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app
+        - config
+        - database
+        - routes
+
+    level: 5
+
+    ignoreErrors:
+        - '#Call to an undefined method .*delete\(\)#'
+        - '#Access to an undefined property App\\Http\\Resources\\[a-zA-Z0-9::a-zA-Z]#'
+        - '#Undefined variable: \$this#'
+
+    parallel:
+        maximumNumberOfProcesses: 4
+
+    noUnnecessaryCollectionCall: false
+    checkMissingIterableValueType: false

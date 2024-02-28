@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('users')->insert([
+            'name' => 'Cesar Morales',
+            'email' => 'admin@skillshore.com',
+            'password' => Hash::make('Sk!||P@r8:8000'),
+            'user_type' => 'admin',
+            'email_verified_at' => now()
+        ]);
+    }
+}
